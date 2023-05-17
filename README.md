@@ -7,6 +7,10 @@
 ```bash
 docker-compose -f ./docker-compose-elk-local.yml up -d
 ```
+- elasticSearch : localhost:9200
+- kibana : localhost:5601
+- 위 순서대로 각각 접근해서 로그인을 수행해준다. 
+  - (id: elastic / pw: changeme) <- 로컬 테스트 용이므로 설정에서 변경 없이 사용
 
 ### 종료하기
 ```bash
