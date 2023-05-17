@@ -1,0 +1,14 @@
+# ============================== Filebeat inputs ===============================
+filebeat.inputs:
+- type: log
+  id: api-log # API 로그
+  fields:
+      index_name: "api-log" # 인덱스명
+  enabled: true
+  paths:
+    - /usr/share/filebeat/logs/*.log.json
+
+# ================================== Outputs ===================================
+# ------------------------------ Logstash Output -------------------------------
+output.logstash:
+  hosts: ["logstash:5044"]

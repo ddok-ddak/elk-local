@@ -1,0 +1,18 @@
+# 비트만 따로 컴포즈로 구성하는 경우
+version: '3.7'
+services:
+  filebeat:
+    user: root
+    build:
+      context: ./
+      args:
+        ELASTIC_VERSION: 8.7.1
+#     ports:
+#       -
+    volumes:
+      - ../be-ddokddak/logs:/usr/share/filebeat/logs
+    restart: unless-stopped
+networks:
+  default:
+    external:
+      name: dodone_elk
